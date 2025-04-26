@@ -43,6 +43,7 @@ android {
 val roomVersion  = "2.7.0"
 
 dependencies {
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
     kapt("androidx.room:room-compiler:$roomVersion")
     implementation("androidx.room:room-runtime:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
