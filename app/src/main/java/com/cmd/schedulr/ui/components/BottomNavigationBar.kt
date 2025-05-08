@@ -1,5 +1,6 @@
 package com.cmd.schedulr.ui.components
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,11 +15,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import com.cmd.schedulr.R
+import com.cmd.schedulr.ui.screen.NavRoute
 
 @Composable
 fun BottomNavigationBar(
-    selectedIndex: Int,
-    onItemSelected: (Int) -> Unit
+    selectedItem: NavRoute,
+    onItemSelected: (NavRoute) -> Unit
 ) {
     Box(
         contentAlignment = Alignment.BottomCenter,
@@ -35,23 +37,26 @@ fun BottomNavigationBar(
         ) {
             BottomNavigationBarButton(
                 iconResId = R.drawable.list_task,
-                selected = selectedIndex == 0,
-                onClick = { onItemSelected(0) }
+                selected = selectedItem == NavRoute.Home,
+                onClick = { onItemSelected(NavRoute.Home) }
             )
             BottomNavigationBarButton(
                 iconResId = R.drawable.calendar3,
-                selected = selectedIndex == 1,
-                onClick = { onItemSelected(1) }
+                selected = selectedItem == NavRoute.Calendar,
+                onClick = {
+                    Log.d("Main", "Pressed")
+                    onItemSelected(NavRoute.Calendar)
+                }
             )
             BottomNavigationBarButton(
                 iconResId = R.drawable.puzzle,
-                selected = selectedIndex == 2,
-                onClick = { onItemSelected(2) }
+                selected = selectedItem == NavRoute.Templates,
+                onClick = { onItemSelected(NavRoute.Templates) }
             )
             BottomNavigationBarButton(
                 iconResId = R.drawable.clipboard_data,
-                selected = selectedIndex == 3,
-                onClick = { onItemSelected(3) }
+                selected = selectedItem == NavRoute.Statistics,
+                onClick = { onItemSelected(NavRoute.Statistics) }
             )
         }
     }
