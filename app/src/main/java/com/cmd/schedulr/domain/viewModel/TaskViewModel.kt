@@ -2,12 +2,11 @@ package com.cmd.schedulr.domain.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.cmd.schedulr.domain.DAO.TaskDAO
 import com.cmd.schedulr.domain.entity.Task
 import com.cmd.schedulr.domain.entity.mapped.TaskMapped
-import com.example.schedulr.domain.AppDatabase
+import com.cmd.schedulr.domain.AppDatabase
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn

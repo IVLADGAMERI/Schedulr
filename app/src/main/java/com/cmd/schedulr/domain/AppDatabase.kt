@@ -1,4 +1,4 @@
-package com.example.schedulr.domain
+package com.cmd.schedulr.domain
 
 import android.content.Context
 import androidx.room.Database
@@ -10,6 +10,7 @@ import com.cmd.schedulr.domain.entity.Task
 import com.cmd.schedulr.domain.entity.TaskTag
 import com.cmd.schedulr.domain.entity.TaskTagCrossRef
 import com.cmd.schedulr.domain.entity.UserColor
+import com.cmd.schedulr.domain.type.converter.ColorConverter
 import com.cmd.schedulr.domain.type.converter.LocalDateConverter
 import com.example.schedulr.domain.type.converter.LocalTimeConverter
 import com.example.schedulr.domain.type.converter.WeekDayConverter
@@ -23,7 +24,12 @@ import com.example.schedulr.domain.type.converter.WeekDayConverter
                ],
     version = 1
 )
-@TypeConverters(WeekDayConverter::class, LocalTimeConverter::class, LocalDateConverter::class)
+@TypeConverters(
+    WeekDayConverter::class,
+    LocalTimeConverter::class,
+    LocalDateConverter::class,
+    ColorConverter::class
+)
 abstract class AppDatabase : RoomDatabase() {
     companion object {
         @Volatile
