@@ -8,12 +8,10 @@ class LocalDateConverter {
     private val formatter = DateTimeFormatter.ISO_LOCAL_DATE
 
     @TypeConverter
-    fun fromLocalDateToString(date: LocalDate?): String? {
-        return date?.format(formatter)
-    }
+    fun fromLocalDateToString(date: LocalDate?): String? =
+        date?.format(formatter)
 
     @TypeConverter
-    fun toLocalDateFromString(data: String?): LocalDate? {
-        return data?.let { LocalDate.parse(it, formatter) }
-    }
+    fun toLocalDateFromString(data: String?): LocalDate? =
+        data?.let { LocalDate.parse(it, formatter) }
 }
