@@ -14,5 +14,5 @@ data class TaskTag (
     val name: String,
     val description: String?,
     @ColumnInfo(name = "color_rgb")
-    val colorRgb: Color
+    val colorRGB: Int
 )

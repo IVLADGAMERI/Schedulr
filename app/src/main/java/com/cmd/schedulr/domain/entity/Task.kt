@@ -40,5 +40,5 @@ data class Task (
     @ColumnInfo(name = "category_id")
     val categoryId: Int,
     @ColumnInfo(name = "color_rgb")
-    val colorRGB: Color
+    val colorRGB: Int
 )
